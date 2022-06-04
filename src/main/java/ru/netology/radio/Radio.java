@@ -9,7 +9,7 @@ public class Radio {
         if (newCurrentVolume < 10) {
             currentVolume = newCurrentVolume + 1;
         }
-        if (newCurrentVolume == 10){
+        if (newCurrentVolume == 10) {
             currentVolume = newCurrentVolume;
         }
         return currentVolume;
@@ -19,7 +19,7 @@ public class Radio {
         if (newCurrentVolume > 0) {
             currentVolume = newCurrentVolume - 1;
         }
-        if (newCurrentVolume == 0){
+        if (newCurrentVolume == 0) {
             currentVolume = newCurrentVolume;
         }
         return currentVolume;
