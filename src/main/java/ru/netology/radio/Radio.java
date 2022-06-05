@@ -5,22 +5,22 @@ public class Radio {
     private int currentStation;
     private int currentVolume;
 
-    public int increaseVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 10) {
-            currentVolume = newCurrentVolume + 1;
+    public int increaseVolume() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
         }
-        if (newCurrentVolume == 10) {
-            currentVolume = newCurrentVolume;
+        if (currentVolume == 10) {
+            currentVolume = currentVolume;
         }
         return currentVolume;
     }
 
-    public int decreaseVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 0) {
-            currentVolume = newCurrentVolume - 1;
+    public int decreaseVolume() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
         }
-        if (newCurrentVolume == 0) {
-            currentVolume = newCurrentVolume;
+        if (currentVolume == 0) {
+            currentVolume = currentVolume;
         }
         return currentVolume;
     }
@@ -29,21 +29,31 @@ public class Radio {
         return currentVolume;
     }
 
-    public int nextStation(int newCurrentStation) {
-        if (newCurrentStation < 9) {
-            currentStation = newCurrentStation + 1;
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume > 10) {
+            return;
         }
-        if (newCurrentStation == 9) {
+        if (currentVolume < 0) {
+            return;
+        }
+        this.currentVolume = currentVolume;
+    }
+
+    public int nextStation() {
+        if (currentStation < 9) {
+            currentStation = currentStation + 1;
+        }
+        if (currentStation == 9) {
             currentStation = 0;
         }
         return currentStation;
     }
 
-    public int previousStation(int newCurrentStation) {
-        if (newCurrentStation > 0) {
-            currentStation = newCurrentStation - 1;
+    public int previousStation() {
+        if (currentStation > 0) {
+            currentStation = currentStation - 1;
         }
-        if (newCurrentStation == 0) {
+        if (currentStation == 0) {
             currentStation = 9;
         }
         return currentStation;
