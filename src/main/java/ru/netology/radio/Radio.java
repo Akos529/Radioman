@@ -42,6 +42,7 @@ public class Radio {
     public int nextStation() {
         if (currentStation < 9) {
             currentStation = currentStation + 1;
+            return currentStation;
         }
         if (currentStation == 9) {
             currentStation = 0;
@@ -52,6 +53,7 @@ public class Radio {
     public int previousStation() {
         if (currentStation > 0) {
             currentStation = currentStation - 1;
+            return currentStation;
         }
         if (currentStation == 0) {
             currentStation = 9;

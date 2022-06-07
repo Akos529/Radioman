@@ -104,9 +104,9 @@ public class RadioTest {
     @Test
     public void shouldSetNextStation() {
         Radio radio = new Radio();
-        radio.setCurrentStation(5);
+        radio.setCurrentStation(8);
         radio.nextStation();
-        int expected = 6;
+        int expected = 9;
         int actual = radio.getCurrentStation();
         assertEquals(expected, actual);
     }
@@ -124,9 +124,9 @@ public class RadioTest {
     @Test
     public void shouldSetPreviousStation() {
         Radio radio = new Radio();
-        radio.setCurrentStation(5);
+        radio.setCurrentStation(1);
         radio.previousStation();
-        int expected = 4;
+        int expected = 0;
         int actual = radio.getCurrentStation();
         assertEquals(expected, actual);
     }
